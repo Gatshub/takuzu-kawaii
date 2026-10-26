@@ -730,7 +730,7 @@ func (m model) menuView() string {
 			hintWord = "indices"
 		}
 		prefix := fmt.Sprintf("  [%d] ", i+1)
-		line := fmt.Sprintf("%dx%d · %-9s · %d %s", lv.size, lv.size, lv.name, lv.hints, hintWord)
+		line := fmt.Sprintf("%-5s · %-9s · %d %-7s", fmt.Sprintf("%dx%d", lv.size, lv.size), lv.name, lv.hints, hintWord)
 		if i == m.levelIdx {
 			b.WriteString(selStyle.Render(prefix + line))
 		} else {
